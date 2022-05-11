@@ -357,6 +357,10 @@ Mit `grid-template-rows` können wir die Höhen der Rows steuern. Dies funktioni
 * Im IE11 wird nur eine ältere [Spezifikation](https://www.w3.org/TR/2011/WD-css3-grid-layout-20110407/) von CSS Grid unterstützt
   * Unter anderem werden `grid-template-areas` nicht unterstützt
 
+**Flexbox vs CSS Grid Quiz**
+
+![Flexbox vs CSS Grid Quiz](./assets/css-quiz.png)
+
 **Hilfreiche Links**
 
 * [CSS Tricks Artikel](https://css-tricks.com/snippets/css/complete-guide-grid/)
