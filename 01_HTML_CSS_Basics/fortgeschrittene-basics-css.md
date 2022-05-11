@@ -773,3 +773,7 @@ animation-delay: 2s;
 Zeit: ~ 10 min
 
 **Solution**: [https://codesandbox.io/s/3i6kc](https://codesandbox.io/s/3i6kc)
+
+**Hilfreiche Links**
+
+* [New CSS Features In 2022](https://www.smashingmagazine.com/2022/03/new-css-features-2022/)
