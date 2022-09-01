@@ -20,7 +20,7 @@ Frontend-Frameworks sind **Werkzeugkasten** meist bestehend aus einer Ansammlung
 
 * **Rapid Prototyping** &rightarrow; Viele Frameworks bieten fix fertige Komponenten an
 * **Browser-Support** &rightarrow; Ist meistens sehr gut, da bereits jemand anderes an den Browsersupport gedacht hat
-* **Community** &rightarrow; Viele der Framewroks haben eine eigene Community welche bei Problemen konsultiert werden kann
+* **Community** &rightarrow; Viele der Frameworks haben eine eigene Community welche bei Problemen konsultiert werden kann
 
 ### Nachteile
 
