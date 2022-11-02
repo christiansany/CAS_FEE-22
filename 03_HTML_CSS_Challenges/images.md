@@ -224,7 +224,7 @@ Falls ein Browser den angegebenen `type` nicht unterstützt, wird die ganze Sour
 Die Übung hat bereits das Grid-System von Bootstrap integriert.
 
 - [ ] Füge ein Responsive Image ein, nehme dafür die Bilddateien unter `./images/`
-  - [ ] Das Bild sollte auf xs 12 Spalten Breit sein, auf rg 6 Spalten, und ab lg
+  - [ ] Das Bild sollte auf xs 12 Spalten breit sein, auf rg 6 Spalten, und ab lg 4 Spalten
   - [ ] Berechnet die sizes richtig, sodass die size auf jedem Breakpoint richtig angegeben wird.  
   Schaut euch dazu auch das CSS an, um zu schauen wieviel padding der Container, wieviel die Row und wieviel die Col hat. Bedenkt diese Werte beim berechnen der Size.
 
