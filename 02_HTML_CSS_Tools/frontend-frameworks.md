@@ -10,7 +10,7 @@
 
 ## Intro
 
-Frontend-Frameworks sind **Werkzeugkasten** meist bestehend aus einer Ansammlung von Komponenten aus HTML-, CSS- und JS-Bausteinen.  
+Frontend-Frameworks sind ein **Werkzeugkasten**, der in der Regel aus einer Ansammlung von Komponenten aus HTML-, CSS- und JS-Bausteinen besteht.  
 
 **Frontend-Framework ≠ JavaScript-Framework**
 
@@ -18,15 +18,15 @@ Frontend-Frameworks sind **Werkzeugkasten** meist bestehend aus einer Ansammlung
 
 ### Vorteile
 
-* **Rapid Prototyping** &rightarrow; Viele Frameworks bieten fix fertige Komponenten an
-* **Browser-Support** &rightarrow; Ist meistens sehr gut, da bereits jemand anderes an den Browsersupport gedacht hat
-* **Community** &rightarrow; Viele der Frameworks haben eine eigene Community welche bei Problemen konsultiert werden kann
+* **Rapid Prototyping** &rightarrow; Viele Frameworks bieten vorgefertigte Komponenten an, die schnell einsatzbereit sind.
+* **Browser-Support** &rightarrow; Die Browser-Unterstützung ist in der Regel sehr gut, da bereits andere Entwickler die Kompatibilität berücksichtigt haben.
+* **Community** &rightarrow; Die meisten Frameworks verfügen über eine eigene Community, die bei Problemen konsultiert werden kann.
 
 ### Nachteile
 
-* **Code Bloat** &rightarrow; Meist muss mehr Code importiert werden, als wirklich genutzt wird
-* **Architecture** &rightarrow; Meistens sind CSS-Selektoren und z.B. JS-Libraries vorgegeben und **müssen** genutzt werden
-* **Lernkurve** &rightarrow; Durch hohe Komplexität muss zum Teil viel Zeit investiert werden um das Framework zu "lernen"
+* **Code Bloat** &rightarrow; In der Regel muss mehr Code importiert werden, als tatsächlich genutzt wird.
+* **Architecture** &rightarrow; Oft sind CSS-Selektoren und zum Beispiel JS-Libraries vorgegeben und müssen genutzt werden.
+* **Lernkurve** &rightarrow; Aufgrund der hohen Komplexität erfordert das Erlernen des Frameworks oft eine beträchtlich viel Zeit.
 
 ## Bekannte Frameworks
 
@@ -40,7 +40,7 @@ Website: [getbootstrap.com](https://getbootstrap.com/)
 
 ![Tailwind Homepage](./assets/tailwind.png)
 
-Website: [tailwindcss.com](https://tailwindcss.com/)
+Website: [tailwindcss.com](https://tailwindcss.com/)  
 Tailwind UI: [tailwindui.com](https://tailwindui.com/)
 
 **Weitere Frontend-Frameworks**
@@ -71,7 +71,6 @@ Getting started: https://material.angular.io/guide/getting-started
 
 React
 * [Headless UI](https://headlessui.dev/)
-* [Material Kit](https://www.creative-tim.com/product/material-kit-react/)
 * [React Bootstrap](https://react-bootstrap.github.io/)
 * [Semantic UI](https://react.semantic-ui.com/)
 * [React Toolbox](http://react-toolbox.io)
@@ -80,7 +79,7 @@ React
 
 Angular
 * [Prime NG](https://www.primefaces.org/primeng/#/)
-* [NG Bootstrap](https://valor-software.com/ngx-bootstrap/#/)
+* [NG Bootstrap](https://ng-bootstrap.github.io/#/home)
 * [Onsen UI](https://onsen.io/angular2/)
 * etc.
 
@@ -88,14 +87,14 @@ Angular
 
 * **Architektur** &rightarrow; Passt das gewählte Framework zu eurem Projekt?
 * **Funktionsumfang** &rightarrow; Habt ihr alles, was ihr benötigt?
-  * **Modularisierung** &rightarrow; Könnt ihr selektiv entscheiden, was in euer Projekt importiert wird?
+  * **Modularisierung** &rightarrow; Könnt ihr selektiv entscheiden, was in euer Projekt importiert wird, und was nicht?
 
 > **Das Wichtigste in Kürze**
 >  
-> * Frontend-Frameworks sind dazu da, dem Developer das Leben zu vereinfachen und einen gewissen Kickstart für ein neues Projekt zu geben
-> * Sie bieten meist verschiedenste Komponenten an, die man genutzt werden können
-> * Meist ist das Einbinden eines Frontend-Frameworks eine grosse Entscheidung, die auch mit Negativem verbunden ist (z.B. festgelegte CSS Naming Convention)
-> * JavaScript Libraries und Frameworks haben oft ihre eigene spezifische Implementation eines Frontend-Frameworks
+> * Frontend-Frameworks dienen dazu, die Arbeit für Entwickler zu vereinfachen und einem neuen Projekt einen gewissen Startschub zu geben.
+> * Sie bieten in der Regel eine Vielzahl von Komponenten an, die genutzt werden können.
+> * Die Entscheidung, ein Frontend-Framework einzubinden, ist oft eine wichtige, die auch Nachteile mit sich bringen kann (z.B. festgelegte CSS-Namenskonventionen).
+> * JavaScript-Libraries und Frameworks haben oft ihre eigene spezifische Implementierung eines Frontend-Frameworks.
 
 ## Practice 🔥
 
