@@ -17,7 +17,7 @@ Die Übungen bauen immer aufeinander auf. Aber keine Angst! Für den Fall, dass 
 
 ## Intro
 
-Man kann nicht wissen, von welchem Device ein User auf eine Website geht, daher ist es wichtig, dass Websites responsive sind, sodass die Website sich dem Device anpassen kann um dem User immer eine möglichst gute User Experience zu bieten. Dies nennt man Responsive Web Design (RWD).
+Man kann nicht wissen, von welchem Gerät aus ein Nutzer auf eine Website zugreift. Daher ist es wichtig, dass Websites responsiv sind, sodass sich die Website dem Gerät anpassen kann, um dem Nutzer immer eine bestmögliche User Experience zu bieten. Dies wird als Responsive Web Design (RWD) bezeichnet.
 
 ![Responsive Devices](https://miro.medium.com/max/1626/1*3hQ4krP-rTql7IK0B4-yZQ.gif)
 
@@ -25,8 +25,8 @@ Source: https://miro.medium.com/max/1626/1*3hQ4krP-rTql7IK0B4-yZQ.gif
 
 ## Der Viewport
 
-Damit eine Website responsive wird, wird vor allem eines benötigt. Dem Browser muss mitgeteilt werden, dass die Website, auf die er zugreift, auch wirklich responsive ist.
-Dafür gibt es einen `meta`-Tag, den man nutzen kann.
+Damit eine Website responsiv wird, wird vor allem eines benötigt: Dem Browser muss mitgeteilt werden, dass die Website, auf die er zugreift, tatsächlich responsive ist.
+Hierfür gibt es einen `meta`-Tag, den man nutzen kann.
 
 **Beispiel**
 
@@ -47,8 +47,8 @@ Dafür gibt es einen `meta`-Tag, den man nutzen kann.
 
 **Achtung Antipattern** 🚫
 
-`user-scalable=no` anzugeben gilt als Antipattern, da Usern mit einer Sehschwäche die Möglichkeit genommen wird, die Website zu zoomen.  
-`maximum-scale` sollte mindestens auf `5.0` (empfohlen von Google) gesetzt werden aus dem gleichen Grund.
+* `user-scalable=no` anzugeben gilt als Antipattern, da Usern mit einer Sehschwäche die Möglichkeit genommen wird, die Website zu zoomen.  
+* `maximum-scale` sollte mindestens auf `5.0` (empfohlen von Google) gesetzt werden aus dem gleichen Grund.
 
 **Beispiel mit HTML-Grundgerüst**
 
@@ -72,8 +72,18 @@ Dafür gibt es einen `meta`-Tag, den man nutzen kann.
 
 **Einschub: CSS Pixel und Device Pixel** 👀
 
-Mittlerweile haben fast alle mobilen Geräte ein Pixelratio von mehr als 1:1. Das heisst grundsätzlich, dass 1 CSS Pixel 'mehr' ist als nur 1 Device Pixel.  
-Ein iPhone 6 hat eine native Auflösung von `750px` x `1334px`, aber es besitzt ein Pixelratio von 2:1 (retina Display). Im Browser haben wir aber 'nur' `375px` Breite zur Verfügung. Das Betriebsystem gibt dann das Pixelratio vor, welches dann die CSS Pixel berechnet und diese Info an den Browser weitergibt. **Grundsätzlich sind alle Units, die eine Weite beschreiben, auf die CSS Pixel bezogen, nicht auf die Device Pixel**.
+![DPR Example](./assets/dpr-example.png)
+
+Mittlerweile haben fast alle mobilen Geräte ein Pixelratio von mehr als 1.0. Das bedeutet grundsätzlich, dass 1 CSS-Pixel 'mehr' ist als nur 1 Device-Pixel.  
+Ein iPhone 12 Pro hat eine native Auflösung von `1170px` x `2532px`, besitzt jedoch ein Pixelratio von 3.0. Das Betriebssystem legt dann das Pixelratio fest, anhand dessen die CSS-Pixel berechnet werden, und diese Information wird an den Browser weitergegeben. Im Browser haben wir daher 'nur' eine Breite von `390px` zur Verfügung. **Grundsätzlich beziehen sich alle Units/Einheiten, die eine Distanz beschreiben, auf die CSS-Pixel, nicht auf die Device-Pixel**.
+
+**Rausfinden des Pixelratio**
+
+Um herauszufinden welches DPR euer aktuelles Device hat, könnt ihr folgendes in der Dev-Console eingeben:
+
+```js
+window.devicePixelRatio
+```
 
 **Hilfreiche Links**
 
@@ -85,17 +95,17 @@ Ein iPhone 6 hat eine native Auflösung von `750px` x `1334px`, aber es besitzt 
 
 ### Vorwort
 
-Grundsätzlich gibt es fürs RWD zwei Grundprinzipien.
+Grundsätzlich gibt es fürs RWD zwei Grundprinzipien:
 
 1. Im Layout sollte vermehrt mit `%` gearbeitet werden
-2. Mit **Media-Queries** ermöglichen wir, dass wir CSS-Deklarationen abhängig von bestimmten Kriterien wieder überschreiben können
+2. Durch **Media-Queries** ermöglichen wir, dass CSS-Deklarationen nur dann angewendet werden, wenn bestimmte Kriterien erfüllt sind.
 
 ### Syntax
 
-Ein Media Query beinnt mit einem `@media`, auch 'at-rule' genannt. Danach folgen ein optionaler `media-type` und null bis mehrere `media-feature`.
+Ein Media Query beinnt mit einem `@media`, auch 'at-rule' genannt. Danach folgen ein optionaler `media-type` und 0-n `media-feature`.
 
 ```css
-@media [media-type] [and [(media-feature) ]] {
+@media [media-type] [and [(media-feature)]] {
   /*...*/
 }
 ```
@@ -146,8 +156,8 @@ Fürs Responsive Web Design wird vor allem das _dimension_ Feature genutzt.
 
 #### `width` und `height`
 
-Es können die exakte `width`, `min-width` und `max-width`, und die exakte `height`, `min-height` und `max-height` genutzt werden.  
-Am meisten werden jeweils `min-*` und `max-*` genutzt.
+Es können die `width` (genauer Wert), `min-width` und `max-width`, und die `height` (genauer Wert), `min-height` und `max-height` genutzt werden.  
+Am häufigsten werden jedoch `min-*` und `max-*` verwendet.
 
 **Beispiele**
 
@@ -163,8 +173,7 @@ Am meisten werden jeweils `min-*` und `max-*` genutzt.
 
 **Best Practises** ✅
 
-Alle _dimension_ Features unterstützen die regulären CSS Units wie `px`, `em`, usw. Es wird empfohlen, dass innerhalb von Media-Queries `em` genutzt wird.  
-_Es gab vor Safari 15 einen Bug welcher dazu geführt hat, dass media queries in `em` in Kombination mit Page Zoom nicht richtig funktioniert hatten, dies wurde aber gefixt._
+Alle _dimension_ Features unterstützen die regulären CSS Units wie `px`, `em`, usw. Es wird empfohlen, dass innerhalb von Media-Queries `em` genutzt wird.
 
 **Hilfreiche Links**
 
@@ -272,6 +281,10 @@ In einem `<link>` können Media-Queries ebenfalls verwendet werden.
 
 Dies ist zwar möglich, sollte aber trotzdem nicht verwendet werden. Jede verlinkte CSS-Datei wird heruntergeladen, egal ob der Media Query zutrifft oder nicht. Der Media Query wird dabei erst evaluiert, wenn die Datei heruntergeladen ist.
 
+**Demo** 🤯
+
+- [Link Media Download](https://codesandbox.io/s/8mgls2) (Downloads können per Dev-Tools überprüft werden)
+
 ### Practice 🔥
 
 Öffne diese [**CodeSandbox**](https://codesandbox.io/s/j611l) als Startpunkt.
@@ -288,12 +301,12 @@ Zeit: ~ 15 min
 
 ## Testing
 
-Die einfachste Form vom Testing von Responsive Websites ist, den Browser kleiner und grösser zu machen.
+Die einfachste Form des Testens von responsiven Websites ist es, den Browser kleiner und größer zu machen.
 
 ![Responsive testing](./assets/responsive-testing.png)
 
-Die effektivste Form vom Testing von Responsive Websites ist jedoch mit den Dev-Tools. Dort kann man den Device-Modus aktivieren um div. Sachen zu emulieren.  
-Custom `width` und `height` sind nur die Oberfläche, man kann damit ein Gerät emulieren, das Pixelratio verändern und noch vieles mehr.
+Die effektivste Form des Testens von responsiven Websites erfolgt jedoch mithilfe der Entwickler-Tools. Dort kann man den Device-Modus aktivieren, um verschiedene Szenarien zu emulieren.
+Benutzerdefinierte `width`- und `height`-Werte stellen dabei lediglich die Grundlage dar. Man kann damit ein Gerät emulieren, die Pixeldichte verändern und noch vieles mehr.
 
 ![Responsive testing devtools](./assets/responsive-testing-devtools.png)  
 _Beispiel: Chrome Dev-Tools_
