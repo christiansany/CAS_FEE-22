@@ -1,22 +1,16 @@
 {
-  "name": "cas_fee_21",
+  "name": "cas_fee_22",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/christiansany/CAS_FEE_21.git"
+    "url": "git+https://github.com/christiansany/CAS_FEE_22.git"
   },
   "author": "Christian Sany",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/christiansany/CAS_FEE_21/issues"
-  },
-  "homepage": "https://github.com/christiansany/CAS_FEE_21#readme",
   "dependencies": {
     "md-to-pdf": "^3.3.2"
   }
