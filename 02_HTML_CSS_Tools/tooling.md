@@ -2,9 +2,11 @@
 
 ## Inhalt
 
+* [Bundler](#bundler)
+
 * [Taskrunner & Bundler](#taskrunner--bundler)
 * [Nützliche Tools/Loaders](#nützliche-pluginsloaders--packages)
-* [SASS/SCSS Deepdive](sassscss-deepdive)
+* [SASS/SCSS Deepdive](#sassscss-deepdive)
 
 ## Taskrunner & Bundler
 
@@ -189,7 +191,7 @@ a {
 }
 ```
 
-```scss
+```css
 /* CSS */
 a {
   color: #73c92d;
@@ -276,8 +278,8 @@ Zeit: ~ 10 min
 
 ## SASS/SCSS Deepdive
 
-SCSS ist ein *Superset* von CSS und wird zu CSS transpiliert. Ansatzweise kann es ein bisschen mit Typescript verglichen werden.  
-Es ist nicht an die Limiterungen von CSS gebunden und ermöglicht das Schreiben von effizienterem und wartbarem CSS.
+SCSS ist ein *Superset* von CSS und wird zu CSS transpiliert. In gewisser Weise kann es ein wenig mit TypeScript verglichen werden.
+Es ist nicht an die Beschränkungen von reinem CSS gebunden und ermöglicht das Schreiben von effizienterem und wartbarem CSS.
 
 ### Variablen
 
@@ -294,7 +296,7 @@ a {
 }
 ```
 
-```scss
+```css
 /* CSS */
 a {
   color: #73c92d;
@@ -329,7 +331,7 @@ a {
 }
 ```
 
-```scss
+```css
 /* CSS */
 .skiplink {
   border: 0;
@@ -443,8 +445,8 @@ a {
 ```scss
 /* SCSS */
 %box {
-    padding: 1em;
-    border: 1px solid #ccc;
+  padding: 1em;
+  border: 1px solid #ccc;
 }
 
 .message {
@@ -500,7 +502,7 @@ Position des zu extendenden Selektors ist relevant für ein generiertes Resultat
 }
 ```
 
-```scss
+```css
 /* CSS */
 .message + .message,
 .message-error + .message-error,
@@ -512,7 +514,7 @@ Position des zu extendenden Selektors ist relevant für ein generiertes Resultat
 
 **Einschub: `@mixin` vs `@extend`** 👀
 
-Wichtig: generiertes CSS im Auge behalten
+Es ist wichtig, das generierte CSS im Blick zu behalten:
 * `@mixin`:
   * Einfach wartbar, Resultat vorhersehbar
   * Resultat kann sehr redundant sein. Aber durch die gzip-Komprimierung ist dies nicht so schlimm.
@@ -538,7 +540,7 @@ nav {
 }
 ```
 
-```scss
+```css
 /* CSS */
 nav ul {
   margin: 0;
@@ -574,7 +576,7 @@ a {
 }
 ```
 
-```scss
+```css
 /* CSS */
 a {
   color: black;
@@ -596,8 +598,8 @@ a:focus {
 
 ### Partials/Imports
 
-Durch partials kann eine Modularisierung erzielt werden. Man kann seine SCSS-Dateien aufsplitten und beliebig importieren.  
-Es ist z.B. üblich, dass man Mixins, Placeholder und Variablen in ein oder mehrere separate Partials schreibt.
+Durch Partials kann eine Modularisierung erreicht werden. Man kann seine SCSS-Dateien aufteilen und sie nach Bedarf importieren.  
+Zum Beispiel ist es üblich, Mixins, Platzhalter und Variablen in separate Partials aufzuteilen.
 
 ```sh
 /styles
@@ -635,7 +637,7 @@ Es ist z.B. üblich, dass man Mixins, Placeholder und Variablen in ein oder mehr
 }
 ```
 
-```scss
+```css
 /* CSS */
 .demo {
   height: 25rem;
@@ -667,7 +669,7 @@ $baseFont: 16px;
 }
 ```
 
-```scss
+```css
 /* CSS */
 .example {
   width: 30rem;
@@ -698,7 +700,7 @@ $icons: close, rss, document;
 }
 ```
 
-```scss
+```css
 /* CSS */
 .link {
   border: 1px solid #444;
@@ -733,7 +735,7 @@ button {
 }
 ```
 
-```scss
+```css
 /* CSS */
 button {
   color: red;
@@ -758,7 +760,7 @@ $value: red;
 }
 ```
 
-```scss
+```css
 /* CSS */
 .foo {
   color: red;
