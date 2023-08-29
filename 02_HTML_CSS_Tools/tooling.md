@@ -2,37 +2,36 @@
 
 ## Inhalt
 
-* [Bundler](#bundler)
-
-* [Taskrunner & Bundler](#taskrunner--bundler)
+* [Bundlers like Webpack](#bundler)
 * [Nützliche Tools/Loaders](#nützliche-pluginsloaders--packages)
 * [SASS/SCSS Deepdive](#sassscss-deepdive)
 
-## Taskrunner & Bundler
+## Bundler
 
-**Taskrunners** und **Bundlers** sind hier, um dem Developer das Leben zu vereinfachen. **Sie sind grundsätzlich für das 'Aufbereiten' von Assets verantwortlich**. Wobei die Assets nicht ausschliesslich Bilder oder ähnliches sind, sondern auch CSS oder JavaScript.
+### Was ist ein Bundler?
 
-Taskrunners haben dabei den Ansatz, dass sie mehr Stream-basiert funktionieren. In einem Task wird ein bestimmter Input (Dateien) gegeben, dieser wird dann in verschiedenen Prozessen verarbeitet und ergibt am Schluss wieder einen Output.
+Bundler konzentrieren sich auf das Bündeln und Optimieren des Codes der Applikation. Sie helfen dabei, verschiedene Module und Dateien zu verwalten und zusammenzuführen, wodurch Funktionen wie Code-Splitting, Tree Shaking und Lazy Loading ermöglicht werden. Dies ist besonders nützlich in der modernen Webentwicklung, wo Anwendungen oft aus zahlreichen Modulen oder Komponenten bestehen, die in separaten Dateien geschrieben sind. Bundler analysieren die Abhängigkeiten zwischen diesen Modulen und generieren optimierte Bündel, die von Browsern effizient geladen werden können.
 
-Bundler haben eher einen konfigurativen Approach. Was passieren soll, wird nicht Schritt für Schritt angegeben, sondern man stellt eine kleine bis sehr grosse und komplizierte **Konfiguration** zusammen, die danach vorgibt, was der Bundler alles machen kann/soll. Am Anfang wurden Bundler 'nur' für das Zusammensetzen von Dateien genutzt. Dementsprechend wurden mehrere Dateien zu einer Datei zusammengeführt, daher der Name Bundler. Inzwischen sind Bundler sehr viel potenter geworden, sodass Taskrunner fast nicht mehr genutzt werden. Alles was früher der Taskrunner 'besser' konnte als ein Bundler (z.B. aufbereiten von Bilddateien, generieren von Icon-Sprites oder SVG-Sprite usw.), kann nun ebenfalls in einem Bundler gemacht werden. Daher werden wir heute nur die Bundler genauer anschauen am Beispiel von [Webpack](https://webpack.js.org/)
+Bis heute ist der am weitesten verbreitete Bundler: [Webpack](https://webpack.js.org/). Neuere Bundler wie [Vite](https://vitejs.dev/) oder [Turbopack](https://turbo.build/pack) sind aber auf dem Vormarsch. Vite wird dabei schon sehr häufig eingesetzt und viele Entwickler sind von der Performance begeistert.
 
-### Bundler (Webpack)
+### Webpack
 
-> At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.
-[Source](https://webpack.js.org/concepts/)
+> At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph from one or more entry points and then combines every module your project needs into one or more bundles, which are static assets to serve your content from.  
+> [Source](https://webpack.js.org/concepts/)
 
 #### Quickstart
 
 **Installation**
 
+_Ihr müsste diesem Guide nicht folgen, da ich bereits ein Repository vorbereitet habe. Ihr könnt direkt das [**Webpack Demo**](https://github.com/christiansany/webpack-demo/tree/main) klonen._
+
 Damit wir Webpack nutzen können, müssen wir `webpack` und `webpack-cli` lokal installieren.
 Mit Webpack version 5.0 muss keine Konfigurationsdatei angegeben werden.
 
 ```sh
-cd my/project/webpack-demo
-
+mkdir webpack-demo
+cd webpack-demo
 npm init -y
-
 npm install webpack webpack-cli --save-dev
 ```
 
@@ -79,8 +78,6 @@ Beim Ausführen von Webpack ohne Konfigurationsdatei wird standardmässig `src/i
 Die Output-Datei wird anschliessend als `dist/main.js` gespeichert.
 
 ```sh
-cd my/project/webpack-demo
-
 npx webpack
 ```
 
@@ -146,11 +143,13 @@ module.exports = {
 
 > **Das Wichtigste in Kürze**
 >  
-> * Wenn ein gewisser Dateityp in Webpack unterstützt werden soll, muss der dazugehörige Loader installiert und konfiguriert werden.
-> * Die Webpack-Konfiguration muss nicht selbst erstellt werden bei der Projektaufsetzung mit Angular CLI oder create-react-app.
+> * Wenn ein bestimmter Dateityp von Webpack unterstützt werden soll, muss der entsprechende Loader installiert und konfiguriert werden.
+> * Bei der Einrichtung von Projekten mit Angular CLI oder `create-next-app` muss die Webpack-Konfiguration in der Regel nicht manuell erstellt werden.
 
 **Weitere Bundler**
 
+* [Vite](https://vitejs.dev/)
+* [turbopack](https://turbo.build/pack)
 * [rollup.js](https://www.rollupjs.org/)
 * [parcel](https://parceljs.org/)
 
@@ -159,22 +158,18 @@ module.exports = {
 * [Webpack Website](https://webpack.js.org/)
 * [Getting starteg Guide](https://webpack.js.org/guides/getting-started/)
 * [Webpack Loaders](https://webpack.js.org/concepts/loaders/)
-* [Tutorial: How to set up React, webpack, and Babel from scratch](https://www.valentinog.com/blog/babel/)
-
-**Demo** 🤯
-
-- [Webpack Demo](https://github.com/christiansany/webpack-demo)
 
 ## Nützliche Plugins/Loaders & Packages
 
 * [SASS/SCSS (CSS Präprozessoren) &rightarrow; CSS Asset Building](#sassscss-css-präprozessoren)
 * [PostCSS (CSS Postprozessor) &rightarrow; Advanced CSS Asset Building](#postcss)
 * [Babel &rightarrow; JavaScript Asset Building / Transpiling](#babel)
-* [ESLint &rightarrow; QA (JavaScript Linter)](#eslint)
+* ⭐️ [esbuild &rightarrow; JavaScript Asset Building / Transpiling](https://github.com/esbuild-kit/esbuild-loader)
+* ⭐️ [swc &rightarrow; JavaScript Asset Building / Transpiling](https://swc.rs/docs/usage/swc-loader)
 
 ### SASS/SCSS (CSS Präprozessoren)
 
-SASS/SCSS ist ein CSS Präprozessor. Er ermöglich eine vereinfachte Schreibweise von CSS und bietet viele nützliche Features an, welche das Schreiben von CSS vereinfachen und dieses wartbar machen. SCSS ist eine Abstrahierung von SASS, welche eine leicht andere Syntax hat. SASS und SCSS beiten aber die gleichen Funktionen und die meisten Developer nutzen die SCSS-Syntax.
+SASS/SCSS ist ein CSS-Präprozessor. Er ermöglicht eine vereinfachte Schreibweise von CSS und bietet viele nützliche Funktionen, die das Verfassen von CSS erleichtern und dessen Wartbarkeit verbessern. SCSS ist eine Variante von SASS, die eine etwas andere Syntax aufweist. Sowohl SASS als auch SCSS bieten jedoch dieselben Funktionen, und die meisten Entwickler verwenden die SCSS-Syntax.
 
 **Beispiel**
 
@@ -244,19 +239,11 @@ Loader: https://webpack.js.org/loaders/postcss-loader/
 
 ### Babel
 
-Babel wird fürs Transpilieren und Transformieren von JavaScript genutzt.  
-Es ermöglich die Nutzung der neusten ECMAScript Standards und "übersetzt" diese auf ältere Standards, damit unser JavaScript in älteren Browsern ebenfalls funktioniert.
+Babel wird verwendet, um JavaScript zu transpilieren und zu transformieren.  
+Es ermöglicht die Verwendung der neuesten ECMAScript-Standards und "übersetzt" diese in ältere Standards, damit unser JavaScript auch in älteren Browsern funktioniert.
 
 Website: https://babeljs.io/  
-Loader: https://webpack.js.org/loaders/eslint-loader/
-
-### ESLint
-
-ESLint kann fürs Linten und automatische Formatieren von JavaScript genutzt werden.  
-Es ist der mit Abstand am häufigsten genutzte Linter für JavaScript.
-
-Website: https://eslint.org/  
-Loader: https://webpack.js.org/loaders/eslint-loader/
+Loader: https://webpack.js.org/loaders/babel-loader/
 
 **Hilfreiche Links**
 
@@ -265,14 +252,14 @@ Loader: https://webpack.js.org/loaders/eslint-loader/
 ### Practice 🔥
 
 Klone das Repository der Demo [**Webpack Demo**](https://github.com/christiansany/webpack-demo) als Startpunkt.  
-_Die Zeit reicht bei Weitem nicht aus um alles umzusetzen. Wähle das, was Dich am meisten interessiert_
+_Die Zeit reicht nicht aus um alles umzusetzen. Wähle das, was Dich am meisten interessiert_
 
 - [ ] Analysiere das `package.json` um zu sehen welche npm scripts das es gibt
 - [ ] Beobachte die Unterschiede im generierten Bundle wenn du `npm run build` bzw. `npm run build:prod` ausführst
 - [ ] Aktiviere den `style-loader` & `css-loader` in der Webpack-Konfiguration und importiere das CSS im `index.js`, damit die Styles verwendet werden
 - [ ] Aktiviere den `babel-loader` in der Webpack-Konfiguration, sodass unser JavaScript zu einer älteren Version transpiliert wird (schau Dir das generierte JavaScript am Schluss an)
 - [ ] Aktiviere Source-Maps, damit wir unsere originalen JavaScript-Dateien im Browser ansehen können (achte nach dem Aufstarten des Dev-Server, von welchen Dateien die `console.log()` ausgeführt werden)
-- [ ] Aktiviere das Hot Module Replacement (HRM)
+- [ ] Versuche, einen anderen Transpiler als Babel einzusetzen (z.B. [esbuild-loader](https://github.com/esbuild-kit/esbuild-loader#-install))
 
 Zeit: ~ 10 min
 

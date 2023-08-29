@@ -19,9 +19,9 @@ Die Übungen bauen immer aufeinander auf. Aber keine Angst! Für den Fall, dass 
 
 Man kann nicht wissen, von welchem Gerät aus ein Nutzer auf eine Website zugreift. Daher ist es wichtig, dass Websites responsiv sind, sodass sich die Website dem Gerät anpassen kann, um dem Nutzer immer eine bestmögliche User Experience zu bieten. Dies wird als Responsive Web Design (RWD) bezeichnet.
 
-![Responsive Devices](https://miro.medium.com/max/1626/1*3hQ4krP-rTql7IK0B4-yZQ.gif)
+![Responsive Devices](https://www.mockupworld.co/wp-content/uploads/2019/03/free-apple-multi-devices-mockup-psd.jpg)
 
-Source: https://miro.medium.com/max/1626/1*3hQ4krP-rTql7IK0B4-yZQ.gif
+Source: https://www.mockupworld.co/wp-content/uploads/2019/03/free-apple-multi-devices-mockup-psd.jpg
 
 ## Der Viewport
 
